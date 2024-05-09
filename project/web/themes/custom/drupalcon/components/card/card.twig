@@ -1,0 +1,22 @@
+{% set classes = [
+  'card',
+] %}
+<div{{ attributes.addClass(classes) }}>
+  {% block headerSlot %}
+    {% if header %}
+      <div class="card__image">{{ header }}</div>
+    {% endif %}
+  {% endblock headerSlot %}
+
+  {% block bodySlot %}
+    {% if body %}
+      <div class="card__body">{{ body }}</div>
+    {% endif %}
+  {% endblock bodySlot %}
+
+{% block footerSlot %}
+{% if footer %}
+<div class="card__footer">{{ footer }}</div>
+{% endif %}
+{% endblock footerSlot %}
+</div>
